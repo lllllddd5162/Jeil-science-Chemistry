@@ -33,7 +33,7 @@ const firebaseConfig = { apiKey: "AIzaSyBaWWriu3X7iVQnglR5XcA0Mqqc736VopM", auth
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const appId = 'Jeil-science-Physics';
+const appId = 'Jeil-science-Chemistry';
 
 // --- Constants & Configuration ---
 const SUBJECTS = ['물리', '화학', '생명과학', '지구과학', '통합과학'];
@@ -471,7 +471,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState(null);
   const [myStudentId, setMyStudentId] = useState(null);
-  const [siteTitle, setSiteTitle] = useState('Science Academy');
+  const [siteTitle, setSiteTitle] = useState('제일과학 화학반');
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [siteColor, setSiteColor] = useState('#3730a3');
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -605,7 +605,7 @@ export default function App() {
   };
 
   const handleAuthSubmit = () => {
-    const passwords = { master: '71207179', teacher: '26350' };
+    const passwords = { master: 'arthun0709', teacher: '26350' };
     if (showPasswordInput === 'student') {
       const found = students.find(s => s.studentCode && s.studentCode.trim() === studentCodeInput.trim());
       if (found) { handleLogin('student', found.id); setShowPasswordInput(null); }
